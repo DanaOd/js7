@@ -1,0 +1,6 @@
+.list-item__style {
+  display: inline-block;
+  min-width: 300px;
+  margin: 20px;
+  background-color: aquamarine;
+}
