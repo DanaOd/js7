@@ -21,27 +21,27 @@ const ingredients = [
 const ingredientsRef = document.querySelector("#ingredients");
 console.log(ingredientsRef);
 
-// const ListOfIngredients = ingredients.map(ingredient => {
-//     const li = document.createElement("li");
-//     li.textContent = ingredient;
-//     console.log(li);
-//     return li;
-// }
-// )
-
-// ingredientsRef.append(...ListOfIngredients);
-
-//РЕШЕНИЕ 2 - прячем в функцию создание:
-
-const makeListOfIngredients = ingredient => {
-  return ingredients.map(ingredient => {
+const ListOfIngredients = ingredients.map(ingredient => {
     const li = document.createElement("li");
     li.textContent = ingredient;
+    console.log(li);
     return li;
 }
 )
-}
-
-const ListOfIngredients = makeListOfIngredients(ingredients);
 
 ingredientsRef.append(...ListOfIngredients);
+
+//РЕШЕНИЕ 2 - прячем в функцию создание:
+
+// const makeListOfIngredients = ingredient => {
+//   return ingredients.map(ingredient => {
+//     const li = document.createElement("li");
+//     li.textContent = ingredient;
+//     return li;
+// }
+// )
+// }
+
+// const ListOfIngredients = makeListOfIngredients(ingredients);
+
+// ingredientsRef.append(...ListOfIngredients);

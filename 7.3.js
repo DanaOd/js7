@@ -39,7 +39,7 @@ console.log(ulRef);
 
 const addImageToGalery = ({ url, alt }) => {
   const listItem = document.createElement("li");
-  listItem.classList.add(".list-item__style");
+  listItem.classList.add("list-item__style");
 
   const image = document.createElement("img");
   image.src = url;
@@ -53,19 +53,31 @@ const addImageToGalery = ({ url, alt }) => {
 
 // 3. сделаю map - переберу коллекцию картинок по коллбеку 
 
-const imagesList = images.map(addImageToGalery);
-console.log(imagesList);
+// const imagesList = images.map(addImageToGalery);
 
-ulRef.append(imagesList);
+// console.log(imagesList);
+
+// imagesList.forEach((item) => {
+//   ulRef.append(item);
+// });
+
+
 
 
 // 4. используй шаблонные строки и insertAdjacentHTML() - добавлю в DOM за одну операцию вставки
 
-// const addImageToGalery = ({ url, alt }) => {
-  
-//   return `
-//   <li class="list-item__style">
-//     <img src=${url} alt=${alt}></img>
-//   </li>
-//   `
-// }
+
+
+const ul = document.querySelector("#gallery");
+
+const listInnerText = images.map(({ alt, url }) => {
+  return `
+    <li>
+      <img src=${url} alt=${alt} />
+    </li>
+  `;
+}).join("\n");
+
+ul.insertAdjacentHTML('afterend', listInnerText);
+
+// console.log(ul, listInnerText)
